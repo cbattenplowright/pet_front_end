@@ -14,6 +14,19 @@ const PetContainer = () => {
         fetchPets();
     }, []);
 
+    const postPet = async (newPet) => {
+        const response = await fetch("http://localhost:8080/pets", {
+            method: "POST",
+            headers: {
+                "Content-Type": "applications/json"
+            },
+            body: JSON.stringify(newPet)
+        });
+
+        const savedPet = await response.json();
+        setPets([...pets, savedPet]);
+    };
+
     return (
         <>
             {/* <PetForm postPet={postPet} /> */}

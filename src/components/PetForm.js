@@ -1,5 +1,19 @@
 import { useState } from "react";
 const PetForm = ({ postPet }) => {
+    const [statePet, setStatePet] = useState({
+        name: "",
+        type: "",
+        breed: "",
+        age: 0
+    });
+
+    const handleChange = (e) => {
+        let propertyName = e.target.name;
+        let clonedPet = { ...statePet };
+        clonedPet[propertyName] = e.target.value;
+        setStatePet(clonedPet);
+    };
+
     return (
         <form id="pet-form" onSubmit={handleFormSubmit}>
             <h3>Add a new pet</h3>

@@ -1,4 +1,5 @@
 import PetList from "../components/PetList";
+import PetForm from "../components/PetForm";
 import { useState, useEffect } from "react";
 
 const PetContainer = () => {
@@ -29,7 +30,7 @@ const PetContainer = () => {
 
     return (
         <>
-            {/* <PetForm postPet={postPet} /> */}
+            <PetForm postPet={postPet} />
             <PetList pets={pets} />
         </>
     );

@@ -1,13 +1,13 @@
 import Pet from "./Pet";
 
-const PetList = ({pets, deletePet}) => {
+const PetList = ({pets}) => {
     
     const petComponents = pets.map((pet) => {
         return (
             <Pet
-            key={petId}
-            pet={pet} 
-            deletePet={deletePet}/>
+            key={pet.id}
+            pet={pet} />
+            // deletePet={deletePet}
         )
     })
 

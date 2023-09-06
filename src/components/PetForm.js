@@ -14,6 +14,17 @@ const PetForm = ({ postPet }) => {
         setStatePet(clonedPet);
     };
 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        postPet(statePet);
+        setStatePet({
+            name: "",
+            type: "",
+            breed: "",
+            age: 0
+        });
+    };
+
     return (
         <form id="pet-form" onSubmit={handleFormSubmit}>
             <h3>Add a new pet</h3>

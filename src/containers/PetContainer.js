@@ -13,7 +13,12 @@ const PetContainer = () => {
         fetchPets();
     }, []);
 
-    return <></>;
+    return (
+        <>
+            <PetForm postPet={postPet} />
+            <PetList pets={pets} deletePet={deletePet} />
+        </>
+    );
 };
 
 export default PetContainer;
